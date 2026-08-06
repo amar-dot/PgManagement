@@ -4,8 +4,10 @@ import Dashboard from './components/owner/Dashboard'
 import ProtectedRoute from './ProtectedRoute'
 
 function App() {
+  const basename = import.meta.env.PROD ? '/PgManagement' : '/'
+
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route

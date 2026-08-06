@@ -85,7 +85,7 @@ function OwnerPage() {
             You are signed in as <strong>{user?.role || 'owner'}</strong>.
           </p>
 
-          <div className="owner-info">
+          {/* <div className="owner-info">
             <div className="owner-card">
               <h3>Owner control panel</h3>
               <p>
@@ -104,7 +104,7 @@ function OwnerPage() {
 
           <div className="owner-empty">
             Owner content screens will appear here.
-          </div>
+          </div> */}
         </section>
       </main>
     </div>
