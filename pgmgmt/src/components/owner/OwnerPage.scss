@@ -1,0 +1,231 @@
+.owner-shell {
+    min-height: 100vh;
+    display: flex;
+    background: #f3ece8;
+}
+
+.owner-sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 280px;
+    height: 100%;
+    background: #172338;
+    color: #fff;
+    padding: 24px 18px;
+    box-shadow: 6px 0 20px rgba(0, 0, 0, 0.16);
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 260ms ease, opacity 260ms ease;
+    z-index: 20;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.owner-sidebar.open {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.owner-sidebar h2 {
+    margin: 0 0 24px;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    color: #f5f7ff;
+}
+
+.owner-sidebar nav {
+    display: grid;
+    gap: 10px;
+}
+
+.owner-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 14px;
+    height:100%;    
+    color: #e4ebff;
+    text-decoration: none;
+    transition: background 180ms ease, transform 180ms ease;
+    cursor: pointer;
+    border: none;
+}
+
+.owner-link:hover {
+    color: #ffffff;    
+    transform: translateX(2px);
+    font-weight: 600;
+}
+
+.owner-link.active {
+    color: #ffffff;
+}
+
+.owner-link.active .menu-icon,
+.owner-link.active .label {
+    color: #ffffff;
+}
+
+.owner-link .menu-icon {
+    font-size: 18px;
+    min-width: 24px;
+}
+
+.owner-link .label {
+    font-size: 14px;
+}
+
+.owner-main {
+    flex: 1;
+    margin-left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: margin-left 260ms ease;
+}
+
+.owner-main.open {
+    margin-left: 280px;
+}
+
+.owner-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(23, 35, 56, 0.08);
+}
+
+.hamburgerMenu {
+    width: 44px;
+    height: 44px;
+    border: 1px solid rgba(23, 35, 56, 0.16);
+    border-radius: 12px;
+    background: #fff;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.hamburgerMenu:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+.hamburgerMenu-lines {
+    width: 22px;
+    height: 2px;
+    background: #172338;
+    position: relative;
+    transition: transform 180ms ease, opacity 180ms ease;
+}
+
+.hamburgerMenu-lines::before,
+.hamburgerMenu-lines::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 22px;
+    height: 2px;
+    background: #172338;
+    transition: transform 180ms ease, top 180ms ease, opacity 180ms ease;
+}
+
+.hamburgerMenu-lines::before {
+    top: -6px;
+}
+
+.hamburgerMenu-lines::after {
+    top: 6px;
+}
+
+.hamburgerMenu.open .hamburgerMenu-lines {
+    background: transparent;
+}
+
+.hamburgerMenu.open .hamburgerMenu-lines::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.hamburgerMenu.open .hamburgerMenu-lines::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.owner-content {
+    padding: 32px 28px;
+    flex: 1;
+}
+
+.owner-heading {
+    margin: 0 0 8px;
+    font-size: 28px;
+    color: #172338;
+}
+
+.owner-subtitle {
+    margin: 0;
+    color: #4d5568;
+}
+
+.owner-info {
+    margin-top: 28px;
+    display: grid;
+    gap: 16px;
+    max-width: 640px;
+}
+
+.owner-card {
+    background: #fff;
+    border-radius: 18px;
+    padding: 22px;
+    box-shadow: 0 18px 35px rgba(26, 29, 51, 0.08);
+}
+
+.owner-card h3 {
+    margin: 0 0 10px;
+    color: #172338;
+}
+
+.owner-card p {
+    margin: 0;
+    color: #566475;
+}
+
+.owner-empty {
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+    margin-top: 26px;
+}
+
+@media (max-width: 900px) {
+    .owner-sidebar {
+        width: 260px;
+    }
+
+    .owner-main.open {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .owner-shell {
+        flex-direction: column;
+    }
+
+    .owner-bar {
+        padding: 16px 18px;
+    }
+
+    .owner-content {
+        padding: 20px 18px;
+    }
+}

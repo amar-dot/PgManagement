@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "role": "owner",
+      "username": "owner1",
+      "password": "ownerpass"
+    },
+    {
+      "id": 2,
+      "role": "tenant",
+      "username": "tenant1",
+      "password": "tenantpass"
+    }
+  ]
+}
